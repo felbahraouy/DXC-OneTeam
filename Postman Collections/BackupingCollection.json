@@ -14,7 +14,7 @@
 					"script": {
 						"id": "2aa3ad52-c57e-4b27-8d95-b79da2f2c897",
 						"exec": [
-							"pm.test('Authentification failed', function(){\r",
+							"pm.test('Authentification success', function(){\r",
 							"    pm.response.to.have.status(200);\r",
 							"    pm.environment.set(\"TOKEN\",pm.response.json().value);\r",
 							"})"
@@ -23,7 +23,7 @@
 					}
 				}
 			],
-			"_postman_id": "d5d0647c-f7df-4b40-80b0-bc8ae001f3e7",
+			"id": "d5d0647c-f7df-4b40-80b0-bc8ae001f3e7",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -38,10 +38,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"login\": \"13549\",\r\n  \"password\": \"Admin01_\"\r\n}",
-					"options": {
-						"raw": {}
-					}
+					"raw": "{\r\n  \"login\": \"13549\",\r\n  \"password\": \"Admin01_\"\r\n}"
 				},
 				"url": "{{AUTH_URL}}"
 			},
@@ -63,7 +60,7 @@
 					}
 				}
 			],
-			"_postman_id": "d25dbd45-94ff-47e1-9d54-882401720690",
+			"id": "d25dbd45-94ff-47e1-9d54-882401720690",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -78,10 +75,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"login\": \"13549\",\r\n  \"password\": \"Admin01s_\"\r\n}",
-					"options": {
-						"raw": {}
-					}
+					"raw": "{\r\n  \"login\": \"13549\",\r\n  \"password\": \"Admin01s_\"\r\n}"
 				},
 				"url": "{{AUTH_URL}}"
 			},
@@ -89,7 +83,7 @@
 		},
 		{
 			"name": "GET - Available badge secure",
-			"_postman_id": "daeead9f-045c-4155-bc49-a6fe1c24966a",
+			"id": "daeead9f-045c-4155-bc49-a6fe1c24966a",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
