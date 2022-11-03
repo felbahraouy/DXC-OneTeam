@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "4017e1e3-d794-4564-9d87-65edc281305b",
+		"name": "DXC-OneTeam-API",
+		"description": "API Backend appelé par l'app mobile OneTeam By DXC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST - Authenfication OK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2aa3ad52-c57e-4b27-8d95-b79da2f2c897",
+						"exec": [
+							"pm.test('Authentification failed', function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.environment.set(\"TOKEN\",pm.response.json().value);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "d5d0647c-f7df-4b40-80b0-bc8ae001f3e7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-TenantID",
+						"value": "{{X-TenantID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"login\": \"13549\",\r\n  \"password\": \"Admin01_\"\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": "{{AUTH_URL}}"
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Authenfication KO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2aa3ad52-c57e-4b27-8d95-b79da2f2c897",
+						"exec": [
+							"pm.test('Authentification failed', function(){\r",
+							"    pm.response.to.have.status(401);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "d25dbd45-94ff-47e1-9d54-882401720690",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-TenantID",
+						"value": "{{X-TenantID}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"login\": \"13549\",\r\n  \"password\": \"Admin01s_\"\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": "{{AUTH_URL}}"
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Available badge secure",
+			"_postman_id": "daeead9f-045c-4155-bc49-a6fe1c24966a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "Bearer {{TOKEN}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-TenantID",
+						"value": "{{X-TenantID}}",
+						"type": "text"
+					}
+				],
+				"url": "{{BASE_URL}}/api/secure/badge/available"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a6bfdc6e-2c73-4cf2-a6d1-7021a079a039",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "42f6e6ae-c3ca-4753-b445-810e486d2a95",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
