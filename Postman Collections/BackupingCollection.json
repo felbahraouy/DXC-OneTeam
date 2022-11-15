@@ -14,7 +14,7 @@
 					"script": {
 						"id": "2aa3ad52-c57e-4b27-8d95-b79da2f2c897",
 						"exec": [
-							"pm.test('Authentification succes', function(){\r",
+							"pm.test('Authentification success', function(){\r",
 							"    pm.response.to.have.status(200);\r",
 							"    pm.environment.set(\"TOKEN\",pm.response.json().value);\r",
 							"})"
