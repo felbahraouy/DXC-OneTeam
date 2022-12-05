@@ -7,14 +7,25 @@
 	"item": [
 		{
 			"name": "New Request",
-			"_postman_id": "5805236b-0930-4ef9-b562-95955488b760",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "edcb41fd-3811-4e82-b070-bff449a7f914",
+						"exec": [
+							"pm.environment.get(BASE_URL);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "5805236b-0930-4ef9-b562-95955488b760",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
 				"method": "GET",
-				"header": [],
-				"url": null
+				"header": []
 			},
 			"response": []
 		}
